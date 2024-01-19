@@ -1,0 +1,78 @@
+html {
+	background: no-repeat center center fixed url(/images/back.jpg);
+	background-size: cover;
+	text-align: center;
+	padding: 50px;
+}
+body {
+	.form {
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		position: relative;
+		/*backdrop-filter: blur(15px);*/
+		display: inline-block;
+		padding: 25px;
+		border: 3px solid #ffffff;
+		border-radius: 15px;
+		width: 600px;
+	}
+
+	.form__field {
+		font-family: inherit;
+		font-size: x-large;
+		margin-bottom: 1rem;
+	}
+	
+	.form__error {
+		color: red;
+		text-align: center;
+		font-size: 13px;
+		display: block;
+		margin-top: 1px;
+	}
+	
+	.form input {
+		font-family: inherit;
+		font-size: large;
+		outline: none;
+		display: block;
+		width: 100%;
+		border-radius: 35px;
+		border: 2px solid #ccc;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+	
+	#reg_button {
+		font-family: inherit;
+		font-size: medium;
+		width: 73%;
+		padding: 18px;
+		border-radius: 35px;
+		border: 0;
+		background-color: rgb(255, 190, 190);
+		color: #000000;
+	}
+
+	#auth_button {
+		font-family: inherit;
+		font-size: medium;
+		width: 26%;
+		padding: 18px;
+		margin-top: 5px;
+		border-radius: 35px;
+		border: 0;
+		background-color: rgba(255, 255, 255, 0.637);
+		color: #000000;
+	}
+	
+	input:valid:not(:placeholder-shown) {
+		border-color: green;
+	}
+	
+	input:invalid:not(:placeholder-shown) {
+		border-color: red;
+	}
+	input:invalid:not(:placeholder-shown) + .form__error {
+		display: block;
+	}
+}
