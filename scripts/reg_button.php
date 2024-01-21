@@ -27,7 +27,7 @@ if ($conn->connect_error) {
         . $conn->connect_error);
 }
  
-$sqlquery = "INSERT INTO users_table (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES $EMAIL, $LOGIN, $PASSWORD, $FIO, $PHONE";
+$sqlquery = "INSERT INTO `users_table` (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES $EMAIL, $LOGIN, $PASSWORD, $FIO, $PHONE";
  
 if ($conn->query($sqlquery) === TRUE) {
     echo "record inserted successfully";

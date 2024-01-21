@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Регистрация</title>
-    <meta charset="UTF-8">
-    <link href="/css/style.scss" rel="stylesheet">
-</head>
+    <meta charset="UTF-8" />
+    <link href="/css/style.scss" rel="stylesheet" />
+  </head>
 
-<body>
-    
+  <body>
     <script>
-        // function reg_button() {
-        //     window.print(sdfsdfsdf);
-        // }
+      // function reg_button() {
+      //     window.print(sdfsdfsdf);
+      // }
     </script>
 
-    <form class="form" id="registration" method="post" action="/scripts/reg_button.php">
-        <div>
-            <div class="form__field">
-                <input name="email" placeholder="Электронная почта" title="Укажите эл.почту в формате login@site.ru">
-                <span class="form__error">
-                    Укажите эл.почту в формате login@site.ru
-                </span>
-            </div>
-            
-            <div class="form__field">
-                <input name="login" type="text"  placeholder="Имя пользователя" title="Укажите свой логин, состоящий из 5-15 символов (допускается использование только латиницы)">
-                <span class="form__error">
-                    Укажите свой логин, состоящий из 5-15 символов (допускается использование только латиницы)
-                </span>
-            </div>
-            
-            <div class="form__field">
-                <input name="password" type="password"  placeholder="Пароль" title="!!!!!">
-                <span class="form__error">
-                    Введите пароль, состоящий из не менее чем 6 символов 
-                </span>
-            </div>
-            
-            <div class="form__field">
-                <input name="FIO" type="text" placeholder="Фамилия Имя Отчество">
-                <span class="form__error">
-                    Укажите ФИО, разделяя пробелами
-                </span>
-            </div>
-            
-            <div class="form__field">
-                <input name="phone" type="tel" placeholder="+7 ___ ___ __ __" pattern="+7 [\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" >
-                <span class="form__error">
-                    Укажите номер телефона в формате +7 (XXX) XXX-XX-XX
-                </span>
-            </div>
-            <div>
-                <input class="reg_button" value="button" type="submit">
+    <form
+      class="form"
+      id="registration"
+      method="post"
+      action="/scripts/reg_button.php"
+    >
+      <div class="form__field">
+        <input
+          name="email"
+          placeholder="Электронная почта"
+          title="Укажите эл.почту в формате login@site.ru"
+        />
+        <span class="form__error">
+          Укажите эл.почту в формате login@site.ru
+        </span>
+      </div>
 
-                <!-- <button id="reg_button" name="registration" type="submit">
-                    Зарегистрироваться
-                </button>
-                
-                <button id="auth_button" type="button" href="/auth.html">
-                    Уже есть аккаунт
-                </button> -->
-            </div>
-        </div>
+      <div class="form__field">
+        <input
+          name="login"
+          type="text"
+          placeholder="Имя пользователя"
+          title="Укажите свой логин, состоящий из 5-15 символов (допускается использование только латиницы)"
+        />
+        <span class="form__error">
+          Укажите свой логин, состоящий из 5-15 символов (допускается
+          использование только латиницы)
+        </span>
+      </div>
+
+      <div class="form__field">
+        <input
+          name="password"
+          type="password"
+          placeholder="Пароль"
+          title="!!!!!"
+        />
+        <span class="form__error">
+          Введите пароль, состоящий из не менее чем 6 символов
+        </span>
+      </div>
+
+      <div class="form__field">
+        <input name="FIO" type="text" placeholder="Фамилия Имя Отчество" />
+        <span class="form__error"> Укажите ФИО, разделяя пробелами </span>
+      </div>
+
+      <div class="form__field">
+        <input
+          name="phone"
+          type="tel"
+          placeholder="+7 ___ ___ __ __"
+          pattern="+7 [\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+        />
+        <span class="form__error">
+          Укажите номер телефона в формате +7 (XXX) XXX-XX-XX
+        </span>
+      </div>
+
+      <input class="reg_button" value="button" type="submit" />
+
+      <!-- <button id="reg_button" name="registration" type="submit">
+                Зарегистрироваться
+            </button>
+            
+            <button id="auth_button" type="button" href="/auth.html">
+                Уже есть аккаунт
+            </button> -->
     </form>
-</body>
+  </body>
 </html>
 <!-- FIO
     pattern="[А-Яа-яЁё]*?\s[А-Яа-яЁё]*?\s[А-Яа-яЁё]*"
@@ -72,7 +90,7 @@
 
 <!-- EMAIL
     type="email"
---> 
+-->
 
 <!-- LOGIN
     pattern="[A-Za-z]{5,15}"
@@ -85,7 +103,3 @@
 <!-- NUMBER
     minlength="12" maxlength="12"
 -->
-
-
-
-
