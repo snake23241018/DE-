@@ -29,7 +29,7 @@ if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]
         // echo "<script>alert('Ne udalos` podkluchit`sya k DB');</script>"
         die("Connection failed: " . $conn->connect_error);
     } else {
-        $sqlquery = "INSERT INTO `users_table` (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES ($EMAIL, $LOGIN, $PASSWORD, $FIO, $PHONE)";
+        $sqlquery = "INSERT INTO users_table (`EMAIL`, `LOGIN`, `PASSWORD`, `FIO`, `PHONE`) VALUES ('$EMAIL', '$LOGIN', '$PASSWORD', '$FIO', '$PHONE')";
 
         if ($conn->query($sqlquery)) {
             //prover` script i vyvedi stranicu vhoda
