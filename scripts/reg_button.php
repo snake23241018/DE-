@@ -14,7 +14,7 @@ $dbname = "u1795888_ksv313_db";
 
 //check fields "is set"
 if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["FIO"]) && isset($_POST["phone"])) {
-    $EMAIL = $_POST["email"];
+    $EMAIL = mysqli_real_escape_string($conn, $_POST["email"]);
     $LOGIN = $_POST["login"];
     $PASSWORD = $_POST["password"];
     $FIO = $_POST["FIO"];
@@ -45,3 +45,4 @@ if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]
     //ocherednaya oshibka
     echo "LAST ELSE";
 }
+//die ($conn);
