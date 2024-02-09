@@ -1,5 +1,5 @@
 html {
-  background: no-repeat center center fixed url(/images/back.jpg);
+  background: no-repeat center center fixed url(/images/back.gif);
   background-size: cover;
   text-align: center;
   padding: 50px;
@@ -48,8 +48,9 @@ body {
 
   input[type="submit"] {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 20%;
   }
-  #reg_button {
+  .reg_button {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: small;
     width: 70%;
