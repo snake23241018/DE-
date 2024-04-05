@@ -1,0 +1,22 @@
+<?php
+
+if(!isset($_COOKIE["type"]))
+{
+ header("location:login.php");
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPannel</title>
+</head>
+<body>
+    <div class="ap_header">
+        <?php echo($_COOKIE["user"]);?>
+    </div>
+</body>
+</html>
