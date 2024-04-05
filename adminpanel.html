@@ -1,8 +1,6 @@
 <?php
-
-if(!isset($_COOKIE["type"]))
-{
- header("location:login.php");
+if(!isset($_COOKIE["type"])){
+    header("Location: http://de.votkpromtech.ru/auth.html");
 }
 
 ?>
@@ -16,7 +14,12 @@ if(!isset($_COOKIE["type"]))
 </head>
 <body>
     <div class="ap_header">
-        <?php echo($_COOKIE["user"]);?>
+        <h2>
+            ADMINPANEL is here!
+        </h2>
+    </div>
+    <div>
+        <a href="http://de.votkpromtech.ru/reg.html">Выйти</a>
     </div>
 </body>
 </html>

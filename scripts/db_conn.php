@@ -1,3 +1,8 @@
 <?php
-$conn = new PDO("mysql:host=31.31.196.51;dbname=u1795888_ksv313_db", "u1795888_ksv", "password#313");
+$servername = "31.31.196.51";
+$username = "u1795888_ksv";
+$password = "password#313";
+$dbname = "u1795888_ksv313_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
 
