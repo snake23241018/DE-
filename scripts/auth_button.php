@@ -1,7 +1,7 @@
 <?php
 include("db_conn.php");
 
-$LOGIN = $_POST["login"];
+$LOGIN = $_POST["email"];
 $PASSWORD = $_POST["password"];
 
 //if (){}
@@ -9,7 +9,7 @@ $PASSWORD = $_POST["password"];
 if (isset($_COOKIE['Login']) && isset($_COOKIE['PasswordHash'])){
   echo "<script>window.location.href = 'http://de.votkpromtech.ru/adminpanel.html';</script>";
 } else {
-  setcookie('Login', '$_POST["login"]', time()+3600);
+  setcookie('Email', '$_POST["email"]', time()+3600);
   setcookie('PasswordHash', '$_POST["password"]', time()+3600);
 
 }
