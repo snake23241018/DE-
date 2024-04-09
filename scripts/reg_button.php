@@ -11,7 +11,7 @@
 include ("db_conn.php");
 //check fields "is set"
 if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["FIO"]) && isset($_POST["phone"])) {
-    $EMAIL = ($_POST["email"]);
+    $EMAIL = $_POST["email"];
     $LOGIN = $_POST["login"];
     $PASSWORD = $_POST["password"];
     $FIO = $_POST["FIO"];

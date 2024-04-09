@@ -1,10 +1,4 @@
-<?php
-include("db_conn.php");
 
-if(isset($_COOKIE["type"])){
-  header("Location: http://de.votkpromtech.ru/adminpanel.html");
-
-}?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,7 +11,7 @@ if(isset($_COOKIE["type"])){
 </head>
 
 <body>
-  <form class="form" id="registration" method="post" action="">
+  <form class="form" id="auth" method="post" action="/scripts/auth_button.php">
     <div class="form__field">
       <input name="email" placeholder="Электронная почта" title="Укажите эл.почту в формате login@site.ru" />
       <span class="form__error">
