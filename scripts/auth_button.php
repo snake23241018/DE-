@@ -1,9 +1,15 @@
 <?php
 include("db_conn.php");
 
-if(isset($_COOKIE['Login']) && ($_COOKIE['PasswordHash'])){
+$LOGIN = $_POST["login"];
+$PASSWORD = $_POST["password"];
+
+//if (){}
+
+if (isset($_COOKIE['Login']) && isset($_COOKIE['PasswordHash'])){
   echo "<script>window.location.href = 'http://de.votkpromtech.ru/adminpanel.html';</script>";
 } else {
-  setcookie('Login', $LOGIN, time()+3600);
-  setcookie('PasswordHash', $PASSWORD, time()+3600);
+  setcookie('Login', '$_POST["login"]', time()+3600);
+  setcookie('PasswordHash', '$_POST["password"]', time()+3600);
+
 }
