@@ -33,27 +33,25 @@ if ($conn->connect_error) {
     //echo ($query['PASSWORD']);
 
     while ($row = mysqli_fetch_assoc($query)) {
-      $RowEmail = $row['EMAIL'];
-      $RowPassword = $row['PASSWORD'];
+      $_SESSION['Email'] = $row['EMAIL'];
+      $_SESSION['Login'] = $row['LOGIN'];
+      $_SESSION['Password'] = $row['PASSWORD'];
+      $_SESSION['FIO'] = $row['FIO'];
+      $_SESSION['Phone'] = $row['PHONE'];
+      $_SESSION['Role'] = $row['ROLE'];
     }
   }
   
-  //Доделай сверку!!! ЗДЕСЬ!!!
+  //Доделай куки, перепроверь!!! ЗДЕСЬ!!!
     if ($query->num_rows > 0 && $EMAIL == $RowEmail && $PASSWORD == $RowPassword) {
-      setcookie('Email_Cookie', $RowEmail, time() + 3600);
-      setcookie('Login_Cookie', $RowEmail, time() + 3600);
-      setcookie('Password_Cookie', $RowEmail, time() + 3600);
-      setcookie('Email_Cookie', $RowEmail, time() + 3600);
-      setcookie('Email_Cookie', $RowEmail, time() + 3600);
+      setcookie('Email_Cookie', $_SESSION['Email'], time() + 3600, '');
+      // setcookie('Login_Cookie', $RowLogin, time() + 3600, '');
+      // setcookie('Password_Cookie', $RowPassword, time() + 3600, '');
+      // setcookie('FIO_Cookie', $RowFIO, time() + 3600, '');
+      // setcookie('Phone_Cookie', $RowPhone, time() + 3600, '');
+      // setcookie('Role_Cookie', $RowRole, time() + 3600, '');
       
-      echo $RowEmail;
-      echo "<br>";
-      echo $EMAIL;
-      echo "<br>";
-      echo $RowPassword;
-      echo "<br>";
-      echo $PASSWORD;
-      echo "<br>";
+      echo "<script>window.location.href = 'http://de.votkpromtech.ru/userpanel.html';</script>";
       
     } else {
       echo "<script>alert('Неверно указан логин или пароль!');
