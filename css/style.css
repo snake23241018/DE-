@@ -70,11 +70,6 @@ html {
 	  background-color: rgb(255, 255, 255);
 	  color: #000000;
 	}
-	
-	
-	
-	
-	
 	input:valid:not(:placeholder-shown) {
 	  border-color: green;
 	}

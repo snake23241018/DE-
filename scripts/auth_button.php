@@ -7,17 +7,19 @@ include ("db_conn.php");
 //echo ($_COOKIE['Login']);
 $EMAIL = $_POST['email'];
 $PASSWORD = $_POST['password'];
+// global $RowEmail;
+// global $RowPassword;
 
 
 if ($conn->connect_error) {
   // delete "conn_error" after debug
   // echo "<script>alert('Ne udalos` podkluchit`sya k DB');</script>"
   die("Connection failed: " . $conn->connect_error);
-  
+
 } elseif ($conn) {
-  
+
   if (isset($_COOKIE['Email']) && $_COOKIE['Role'] = 'admin') {
-    
+
     echo "1";
     //echo "<script>window.location.href = 'http://de.votkpromtech.ru/adminpanel.html';</script>";
   } elseif (isset($_COOKIE['Email']) && $_COOKIE['Role'] = 'user') {
@@ -29,35 +31,49 @@ if ($conn->connect_error) {
     //проверка на наличие почты в БД
     $query = $conn->query("SELECT * FROM users_table WHERE EMAIL = '$EMAIL'");
     //echo ($query['PASSWORD']);
-    
-    
-    
-    //Доделай сверку!!! ЗДЕСЬ!!!
 
-    if ($query->num_rows > 0) {
-      //query['PAS'] = 1;
+    while ($row = mysqli_fetch_assoc($query)) {
+      $RowEmail = $row['EMAIL'];
+      $RowPassword = $row['PASSWORD'];
     }
-
-
-    // $mysqli_query = "SELECT * FROM users_table WHERE EMAIL = '$EMAIL'";
-    var_dump ($query);
-    echo '<br><a href="/scripts/logout_button.php">Destroy cookie</a>';
-    //echo "3";
-    //echo "0000";
-    //echo "<script>window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
   }
-} else {
   
-  
+  //Доделай сверку!!! ЗДЕСЬ!!!
+    if ($query->num_rows > 0 && $EMAIL == $RowEmail && $PASSWORD == $RowPassword) {
+      setcookie('Email_Cookie', $RowEmail, time() + 3600);
+      setcookie('Login_Cookie', $RowEmail, time() + 3600);
+      setcookie('Password_Cookie', $RowEmail, time() + 3600);
+      setcookie('Email_Cookie', $RowEmail, time() + 3600);
+      setcookie('Email_Cookie', $RowEmail, time() + 3600);
+      
+      echo $RowEmail;
+      echo "<br>";
+      echo $EMAIL;
+      echo "<br>";
+      echo $RowPassword;
+      echo "<br>";
+      echo $PASSWORD;
+      echo "<br>";
+      
+    } else {
+      echo "<script>alert('Неверно указан логин или пароль!');
+      window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
 
-  echo "5 polzovatel' vozmozhno est'";
-  echo ($mysqli_query);
+    }
+    echo '<br><a href="/scripts/logout_button.php">Destroy cookie</a>';
+    //echo "<script>window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
+} else {
+  echo "<script>alert('Ошибка соединения')</script>";
+
+
+  // echo "5 polzovatel' vozmozhno est'";
+  // echo ($mysqli_query);
   echo '<a href="/scripts/logout_button.php">Destroy cookie</a>';
 
 
-echo "6 krit oshibka";
-echo ($mysqli_query);
-echo '<a href="/scripts/logout_button.php">Destroy cookie</a>';
+  echo "6 krit oshibka";
+  echo ($mysqli_query);
+  echo '<a href="/scripts/logout_button.php">Destroy cookie</a>';
 
 }
 
