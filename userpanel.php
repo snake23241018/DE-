@@ -13,10 +13,11 @@
             USERPANEL is here!
         </h2>
         <h3>
-            <!-- Hello, $_COOKIE['RowLogin']! -->
+            <!-- Выведи данные пользователя -->
+            <?php var_dump($_SESSION['Email']); ?>
         </h3>
     </div>
-    <div>
+    <div class="logout_button">
         <a href="http://de.votkpromtech.ru/scripts/logout_button.php">Выйти</a>
     </div>
 </body>

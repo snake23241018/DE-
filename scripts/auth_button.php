@@ -33,32 +33,41 @@ if ($conn->connect_error) {
     //echo ($query['PASSWORD']);
 
     while ($row = mysqli_fetch_assoc($query)) {
-      $_SESSION['Email'] = $row['EMAIL'];
-      $_SESSION['Login'] = $row['LOGIN'];
-      $_SESSION['Password'] = $row['PASSWORD'];
-      $_SESSION['FIO'] = $row['FIO'];
-      $_SESSION['Phone'] = $row['PHONE'];
-      $_SESSION['Role'] = $row['ROLE'];
+      $_COOKIE['Email'] = $row['EMAIL'];
+      $_COOKIE['Login'] = $row['LOGIN'];
+      $_COOKIE['Password'] = $row['PASSWORD'];
+      $_COOKIE['FIO'] = $row['FIO'];
+      $_COOKIE['Phone'] = $row['PHONE'];
+      $_COOKIE['Role'] = $row['ROLE'];
     }
+
+    // echo $_SESSION['Email'];
+    // echo $_SESSION['Login'];
+    // echo $_SESSION['FIO'];
+    // echo $_SESSION['Role'];
+
+
   }
   
   //Доделай куки, перепроверь!!! ЗДЕСЬ!!!
-    if ($query->num_rows > 0 && $EMAIL == $RowEmail && $PASSWORD == $RowPassword) {
-      setcookie('Email_Cookie', $_SESSION['Email'], time() + 3600, '');
+  //Распаралель условие для ролей "User" и "Admin"!!!
+    if ($query->num_rows > 0 && $EMAIL == $_COOKIE['Email'] && $PASSWORD == $_COOKIE['Password']) {
+      setcookie("Email_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
       // setcookie('Login_Cookie', $RowLogin, time() + 3600, '');
       // setcookie('Password_Cookie', $RowPassword, time() + 3600, '');
       // setcookie('FIO_Cookie', $RowFIO, time() + 3600, '');
       // setcookie('Phone_Cookie', $RowPhone, time() + 3600, '');
       // setcookie('Role_Cookie', $RowRole, time() + 3600, '');
       
-      echo "<script>window.location.href = 'http://de.votkpromtech.ru/userpanel.html';</script>";
+      echo "<script>window.location.href = 'http://de.votkpromtech.ru/userpanel.php';</script>";
       
     } else {
       echo "<script>alert('Неверно указан логин или пароль!');
       window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
 
     }
-    echo '<br><a href="/scripts/logout_button.php">Destroy cookie</a>';
+    // var_dump ($_SESSION['Email']);
+    echo '<br><a href="/scripts/logout_button.php">Destrsoy cookie</a>';
     //echo "<script>window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
 } else {
   echo "<script>alert('Ошибка соединения')</script>";
