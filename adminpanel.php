@@ -14,7 +14,7 @@ session_start();
             ADMINPANEL is here!
         </h2>
         <h3>
-            echo $_SESSION['Email'];
+            <?php echo $_COOKIE['Email_Cookie']; ?>
         </h3>
     </div>
     <div>

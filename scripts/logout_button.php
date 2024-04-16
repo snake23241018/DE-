@@ -11,4 +11,4 @@ setcookie("Email_Cookie", "", time() - 3600, "/", "de.votkpromtech.ru", true, fa
 
 session_unset();
 // session_destroy();
-// echo "<script>window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
+echo "<script>window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";

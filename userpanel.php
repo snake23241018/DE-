@@ -14,7 +14,7 @@
         </h2>
         <h3>
             <!-- Выведи данные пользователя -->
-            <?php var_dump($_SESSION['Email']); ?>
+            <?php echo $_COOKIE['Email_Cookie']; ?>
         </h3>
     </div>
     <div class="logout_button">
