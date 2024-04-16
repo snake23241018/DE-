@@ -26,12 +26,11 @@ if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]
         die("Connection failed: " . $conn->connect_error);
     } elseif ($conn) {
 
-        $mysqli_query = "INSERT INTO users_table (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES ('$EMAIL', '$LOGIN', '$PASSWORD', '$FIO', '$PHONE')";
+        $query = $conn->query("INSERT INTO users_table (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES ('$EMAIL', '$LOGIN', '$PASSWORD', '$FIO', '$PHONE')");
         //?????chini zdes'?????
 
 
-        echo "<script>alert('Вы успешно зарегистрировались. Сейчас Вы будете автоматически перенаправлены на страницу входа...');
-        window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
+        echo "<script>alert('Вы успешно зарегистрировались. Сейчас Вы будете автоматически перенаправлены на страницу входа...');   window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
 
     } else {
         echo "Критическая ошибка. Сообщите администратору Email: 111@111.com <br>";

@@ -54,16 +54,11 @@ if ($conn->connect_error) {
     if ($query->num_rows > 0 && $EMAIL == $_COOKIE['Email'] && $PASSWORD == $_COOKIE['Password']) {
       setcookie("Email_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
       setcookie("Login_Cookie", $_COOKIE['Login'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
-      setcookie("Password_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
-      setcookie("FIO_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
-      setcookie("Phone_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
-      setcookie("Role_Cookie", $_COOKIE['Email'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
-      // setcookie('Login_Cookie', $RowLogin, time() + 3600, '');
-      // setcookie('Password_Cookie', $RowPassword, time() + 3600, '');
-      // setcookie('FIO_Cookie', $RowFIO, time() + 3600, '');
-      // setcookie('Phone_Cookie', $RowPhone, time() + 3600, '');
-      // setcookie('Role_Cookie', $RowRole, time() + 3600, '');
-      
+      setcookie("Password_Cookie", $_COOKIE['Password'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
+      setcookie("FIO_Cookie", $_COOKIE['FIO'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
+      setcookie("Phone_Cookie", $_COOKIE['Phone'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
+      setcookie("Role_Cookie", $_COOKIE['Role'], time() + 3600, "/", "de.votkpromtech.ru", true, false);
+            
       echo "<script>window.location.href = 'http://de.votkpromtech.ru/userpanel.php';</script>";
       
     } else {

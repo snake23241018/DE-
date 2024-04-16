@@ -14,7 +14,12 @@
         </h2>
         <h3>
             <!-- Выведи данные пользователя -->
-            <?php echo $_COOKIE['Email_Cookie']; ?>
+            Your email: <?php echo $_COOKIE['Email_Cookie']; ?>
+            <br>
+            Your login: <?php echo $_COOKIE['Login_Cookie']; ?>
+            <br>
+            Your role: <?php echo $_COOKIE['Role_Cookie']; ?>
+            <br>
         </h3>
     </div>
     <div class="logout_button">
