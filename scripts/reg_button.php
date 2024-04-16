@@ -1,9 +1,8 @@
 <?php
 //////////////////////////////////////////////////////
 ///SDELAI EKRANIROVANIE mysqli_real_escape_string()///
-////////////////////////////////////////////////////////////////////
-///RAZDELI INFORMACIU O BAZE DANNIH I REGISTRACIU NA RAZNIE FAILI///
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
 
 
 
@@ -27,7 +26,11 @@ if (isset($_POST["email"]) && isset($_POST["login"]) && isset($_POST["password"]
     } elseif ($conn) {
 
         $query = $conn->query("INSERT INTO users_table (EMAIL, LOGIN, PASSWORD, FIO, PHONE) VALUES ('$EMAIL', '$LOGIN', '$PASSWORD', '$FIO', '$PHONE')");
-        //?????chini zdes'?????
+        
+        // Вывести сообщение о том, что пользователь с такими данными существует
+        // if (condition) {
+        //     # code...
+        // }
 
 
         echo "<script>alert('Вы успешно зарегистрировались. Сейчас Вы будете автоматически перенаправлены на страницу входа...');   window.location.href = 'http://de.votkpromtech.ru/auth.html';</script>";
