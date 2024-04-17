@@ -1,10 +1,9 @@
 <?php
-if (isset($_COOKIE['Email_Cookie'])) {
-  header('Location: http://de.votkpromtech.ru/scripts/auth_button.php');
+session_start();
+// header('Location: http://de.votkpromtech.ru/scripts/auth_button.php');
   
-} else{
-echo   
-  '<!DOCTYPE html>
+echo   '
+  <!DOCTYPE html>
   <html lang="ru">
   
   <head>
@@ -37,6 +36,4 @@ echo
   </form>
   </body>
   
-  </html>
-  </script>';
-}
+  </html>';

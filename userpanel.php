@@ -1,4 +1,6 @@
-<?php session_start();?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,14 +14,9 @@
         <h2>
             USERPANEL is here!
         </h2>
+        
         <h3>
-            <!-- Выведи данные пользователя -->
-            Your email: <?php echo $_COOKIE['Email_Cookie']; ?>
-            <br>
-            Your login: <?php echo $_COOKIE['Login_Cookie']; ?>
-            <br>
-            Your role: <?php echo $_COOKIE['Role_Cookie']; ?>
-            <br>
+           Hi, <?php echo  $_COOKIE['Email_Cookie']; ?>!
         </h3>
     </div>
     <div class="logout_button">
