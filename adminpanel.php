@@ -17,8 +17,8 @@ session_start();
             <?php echo $_COOKIE['Email_Cookie']; ?>
         </h3>
     </div>
-    <div>
-        <a href="http://de.votkpromtech.ru/auth.html">Выйти</a>
+    <div class="logout_button">
+        <a href="http://de.votkpromtech.ru/scripts/logout_button.php">Выйти</a>
     </div>
 </body>
 </html>
