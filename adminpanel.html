@@ -1,25 +1,24 @@
 <?php
-if(!isset($_COOKIE["type"])){
-    header("Location: http://de.votkpromtech.ru/auth.html");
-}
-
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminPannel</title>
+    <title>AdminPanel</title>
 </head>
 <body>
     <div class="ap_header">
         <h2>
             ADMINPANEL is here!
         </h2>
+        <h3>
+            <?php echo $_COOKIE['Email_Cookie']; ?>
+        </h3>
     </div>
     <div>
-        <a href="http://de.votkpromtech.ru/reg.html">Выйти</a>
+        <a href="http://de.votkpromtech.ru/auth.html">Выйти</a>
     </div>
 </body>
 </html>
