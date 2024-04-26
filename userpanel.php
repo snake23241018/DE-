@@ -20,7 +20,7 @@
         </h3>
     </div>
     <div class="logout_button">
-        <a href="http://de.votkpromtech.ru/scripts/logout_button.php">Выйти</a>
+        <a href="https://de.votkpromtech.ru/scripts/logout_button.php">Выйти</a>
     </div>
 </body>
 </html>
